@@ -5,7 +5,7 @@ const app = new Vue({
 	},
 	methods: {
 		send () {
-			.post('https://developer.ebay.com/register_upgrade_keyset', { username: 'getYoShitTogethaBrah' })
+			axios.post('https://developer.ebay.com/register_upgrade_keyset', { username: 'getYoShitTogethaBrah' })
 			.then(res => {
 				console.log('Sent')
 			})
@@ -13,12 +13,5 @@ const app = new Vue({
 				console.log('Errored out')
 			})
 		}
-	},
-	mounted () {
-		axios
-			.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-			.then(res => {
-				console.log(res)
-			})
 	}
 })
